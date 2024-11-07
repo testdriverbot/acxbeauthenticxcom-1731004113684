@@ -1,0 +1,30 @@
+version: 4.1.8
+steps:
+  - prompt: Focus the Google Chrome window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Locate the main call to action button.
+    commands: []
+  - prompt: Click on the main call to action.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Authenticx SSO
+        description: main call to action button
+        action: click
+  - prompt: Click on the main call to action.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Next
+        description: main call to action button
+        action: click
+  - prompt: >-
+      Assert that the related feature is activated or an appropriate response
+      occurs.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Enter a valid email address, phone number, or Skype name is visible
